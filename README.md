@@ -12,5 +12,5 @@ Mitaka ver1.7のカスタマイズ用ファイルです。<br>
 Mitakaについては https://4d2u.nao.ac.jp/html/program/mitaka/ をご覧ください。<br>
 またMitakaの利用上のご注意 https://4d2u.nao.ac.jp/t/var/download/notice.html もお読みください。<br>
 
-### LICENCE
+### LICENCE ライセンス
 CC-BY: Akito D. Kawamura (@aDAVISk)
