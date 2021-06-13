@@ -1,0 +1,74 @@
+///////////////////////////////////////////////////
+// solarsys_preset.mcd
+// CC-BY: Akito D. Kawamura (@aDAVISk)
+// This program works with Mitaka version 1.7.0
+///////////////////////////////////////////////////
+
+DefCommandSet[AnnEclps2030Jun01_Hokkaido, MENU_BAR]
+  KeyString(Annular Eclipse 2030Jun01 Hokkaido)
+  KeyString[ja,ja_ruby](2030年6月1日の金環日食at北海道)
+  SetMainMode(MODE_MAIN_PLANETARIUM)
+  SetDateTime(2030/6/1 15:30:00.00 9.0)
+  SetLonLat(143.3,44.1)
+  SetViewTarget(SUN)
+  SwitchSet(SUN_DISP,SUN_NAME,SATELLITE_DISP, SATELLITE_NAME)//, VIEW_INFO_DISP)
+  SetPlanetariumAngle(1.7)
+  SetTimeStep(1MIN)
+
+DefSequence[ScaleTraveling, MENU_BAR]
+  KeyString(SolarSys. Scale-Travel)
+  KeyString[ja,ja_ruby](太陽系 スケールの旅)
+	SwitchSet(
+		SUN_DISP, SUN_NAME, SUN_GLARE, PLANET_DISP,
+		PLANET_NAME, PLANET_ORBIT, PLANET_SELECT, PLANET_CLOUD,
+		SATELLITE_DISP, SATELLITE_NAME, SATELLITE_ORBIT, SATELLITE_SELECT,
+		MINOR_PLANET_DISP, MINOR_PLANET_NAME,  MINOR_PLANET_SELECT,
+		TNO_DISP, TNO_NAME, TNO_ORBIT, TNO_SELECT,
+		OORT_CLOUD_DISP, STAR_DISP, STAR_NAME, STAR_ORBIT,
+		STAR_SELECT, OUR_GALAXY_DISP, OUR_GALAXY_NAME, SGR_A_ST_DISP,
+		GALACTIC_CENTER_BG_DISP, GLOB_CLSTR_DISP, NEARBY_GALAXY_DISP, NEARBY_GALAXY_NAME,
+		NEARBY_GALAXY_SELECT, DISTANT_GALAXY_DISP, QSO_DISP, CMB_DISP,
+		SPACECRAFT_DISP, SPACECRAFT_NAME, SPACECRAFT_TRAJECTORY, SPACECRAFT_SELECT,
+		ECLIPSE_DISP, CONSTELLATION_SELECT_SPACE, SCALE_CIRCLE_DISP, GROUND_DISP,
+		DATE_DISP, SURFACE_POINTER_DISP, INFO_WINDOW_DISP, ENABLE_SHADER,
+		ENABLE_BLACKOUT_SHORTCUT, ON_SCREEN_CREDITS_DISP, 4D2U_LOGO_DISP
+	)
+	SetModesToDefault()
+  SetMainMode(MODE_MAIN_SPACE)
+	SetTime(12:00:0.0)
+	SetTarget(PLNT_EARTH)
+	SetScale(3e-09)
+  SetOrientation(1,0,0,0)
+  Pause()
+
+  Transition(10.0)
+  SetScale(1.5E-7)
+  Pause(1)
+  SetMode(ZOOM,ZOOM_2)
+  Pause(1)
+
+  Transition(15.0)
+  AdvanceTime(28day)
+  Pause(1)
+  SetMode(ZOOM,ZOOM_REAL_SCALE)
+  Pause(1)
+
+  Transition(10.0)
+  SetScale(7E-5)
+  Pause(0)
+  Transition(5.0)
+  SetTarget(SUN)
+  Pause(1)
+  SetMode(ZOOM,ZOOM_4)
+  Pause(1)
+
+  Transition(25.0)
+  AdvanceTime(365day)
+  Pause(1)
+  SetMode(ZOOM,ZOOM_REAL_SCALE)
+  Pause(1)
+
+  Transition(25.0)
+  SetScale(0.6)
+
+  At Exit:
