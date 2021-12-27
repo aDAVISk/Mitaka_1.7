@@ -1,0 +1,6 @@
+//---  Mitaka Command Definition File  (Ver. 1.7.1a)  ---
+// Reset default subtitle
+// CC-BY: Akito D. Kawamura @aDAVISk
+
+DefCommandSet[STATE]
+  DeleteSubtitleWindows(Default)
